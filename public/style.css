@@ -1,6 +1,30 @@
+html {background-color:#3b444b;}
+}
+a{
+text-decoration:none;
+color:000000;
+}
+a:hover{
+color:black;
+}
+a:active{
+color:white;
+}
+a:visited{
+color:silver;
+}
 
 body {
 		font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+font-size: 0.875rem;
+line-height: 22px;
+line-height: 1.35rem;
+font-family: serif, Helvetica, sacns-serif;
+margin: 0 auto;
+padding-top: 105px;
+height: 100%;
+min-height: 100%;
 		margin: 0;
 	}
 
@@ -22,15 +46,20 @@ aside {
 }
 
 header {
-	background-color: #ccc;
-	border-bottom: 5px solid grey;
-	height: 8vw;
+	border-bottom: 5px solid white;
+  background-color:#800000;
+  display: block;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width:100%;
+  padding:20px 20px 20px 20px;
 }
 
 h1, h2, h3 {
 	margin: 0;
 	padding: 0;
-	color: #444;
+	color: white;
 }
 
 h1 {
@@ -295,13 +324,8 @@ button#add:hover {
 	background-color: white;
 	color: grey;
 }
+
 .product_image_display {
 	float: right;
 	margin: -23px 13px 0px 0px;
-}
-
-.clear_cart {
-	margin: 0 auto;
-    display: block;
-    text-align: center;
 }
