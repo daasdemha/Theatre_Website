@@ -104,7 +104,7 @@ main a:hover {
 
 section {
 	background-color: #DDD;
-	width: 24vw;
+	width: 94vw;
 	margin-top: 1vw;
 	padding: 1vw;
 	border-radius: 1vw;
@@ -175,14 +175,14 @@ input[type="submit"]:hover, header > a:hover, .custom-file-upload:hover, .add:ho
   background-color: white;
 }
 
-input[type="text"], input[type="email"], input[type="password"], input[type="tel"], textarea, select {
+/* input[type="text"], input[type="email"], input[type="password"], input[type="tel"], textarea, select {
 	font-size: 1.5vw;
 	width: 25vw;
 	border: 1px solid #CCC;
 	padding: 0.5vw;
 	/* margin-bottom: 1vw; */
 	/* border-radius: 0.6vw; */
-}
+} */
 
 textarea {
 	height: 10vw;
@@ -201,11 +201,11 @@ input:valid, textarea:valid {
 }
 
 
-select {
+/* select {
 	width: 26.3vw;
 	-webkit-appearance: none;
 	-webkit-border-radius: 0px;
-}
+} */
 
 form > br {
 	line-height: 3vw;
@@ -294,4 +294,14 @@ button#add {
 button#add:hover {
 	background-color: white;
 	color: grey;
+}
+.product_image_display {
+	float: right;
+	margin: -23px 13px 0px 0px;
+}
+
+.clear_cart {
+	margin: 0 auto;
+    display: block;
+    text-align: center;
 }

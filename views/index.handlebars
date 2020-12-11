@@ -1,34 +1,121 @@
-
 <!doctype html>
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Home Page</title>
-		<meta name="description" content="form to add new books">
-		<meta name="author" content="Mark Tyers">
-		<link href="{{host}}/style.css" type="text/css" rel="stylesheet" />
-		<script type="module" src="{{host}}/main.js"></script>
-	</head>
-	<body>
-		<header>
-			<h1>Home</h1>
-			{{#if authorised}}
-				<a href="/logout">Log out</a>
-			{{else}}
-				<a href="/login">Log in</a>
-			{{/if}}
-		</header>
-		{{#if msg}}
- 			<aside>
-				<p class="msg">{{msg}}</p>
-			</aside>
+
+<head>
+	<meta charset="utf-8">
+	<title>Star Theatre | HOME</title>
+	<meta name="description" content="form to add new books">
+	<meta name="author" content="Mark Tyers">
+	<link href="{{host}}/style.css" type="text/css" rel="stylesheet" />
+	<link href="{{host}}/production_plan.css" type="text/css" rel="stylesheet" />
+	<script type="module" src="{{host}}/main.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Star Theatre</h1>
+		{{#if authorised}}
+		<a href="/logout">Log out</a>
+		{{else}}
+		<a href="/login">Log in</a>
 		{{/if}}
-	<main>
+	</header>
+	{{#if msg}}
+	<aside>
+		<p class="msg">{{msg}}</p>
+	</aside>
+	{{/if}}
+
+
+	<section>
+		<!--for demo wrap-->
+		<h1 class="perforanceH1">Currently Playing</h1>
+		<div class="tbl-header">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<thead>
+					<tr>
+						<th>Production For</th>
+						<th>Poster</th>
+						<th>Performance Title</th>
+						<th>Status</th>
+						<th>Performance Date</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="tbl-content">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tbody>
+
+					{{#each allPerformances}}
+					<tr>
+						<td>{{production_for}}</td>
+						<td><a href="/performance/{{performance_id}}"><img src="{{host}}/images/{{thumbnail}}" alt=""
+									border=3 height=100 width=100> </a></td>
+						<td><a href="/performance/{{performance_id}}">{{title}}</a></td>
+						<td>{{status}}</td>
+						<td>{{performed_date}}</td>
+
+						<td> <a href="/performance/{{performance_id}}"> Detail</a></td>
+					</tr>
+					{{/each}}
+
+
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+
+	<section>
+		<!--for demo wrap-->
+		<h1 class="perforanceH1">Production Plans</h1>
+		<div class="tbl-header">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<thead>
+					<tr>
+						<th>Production For</th>
+						<th>Poster</th>
+						<th>Performance Title</th>
+						<th>Status</th>
+						<th>Performance Date</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="tbl-content">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tbody>
+
+					{{#each productionPlans}}
+					<tr>
+						<td>{{production_for}}</td>
+						<td><a href="/performance/{{performance_id}}"><img src="{{host}}/images/{{thumbnail}}" alt=""
+									border=3 height=100 width=100></a></td>
+						<td><a href="/performance/{{performance_id}}">{{title}}</a></td>
+						<td>{{status}}</td>
+						<td>{{performed_date}}</td>
+
+						<td> <a href="/performance/{{performance_id}}"> Detail</a></td>
+					</tr>
+					{{/each}}
+
+
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+
+	{{!-- <main>
 		<p>This is the home page. Users can see it without logging in.</p>
 		{{#if authorised}}
-			<p><a href="/secure">secure page</a></p>
+		<p><a href="/secure">secure page</a></p>
 		{{/if}}
-	</main>
-	</body>
+	</main> --}}
+</body>
+
 </html>
