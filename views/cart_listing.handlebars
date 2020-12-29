@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Star Theatre | HOME</title>
+    <meta name="description" content="form to add new books">
+    <meta name="author" content="Mark Tyers">
+    <link href="{{host}}/style.css" type="text/css" rel="stylesheet" />
+    <link href="{{host}}/production_plan.css" type="text/css" rel="stylesheet" />
+    <script type="module" src="{{host}}/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>The Theatre</h1>
+        {{#if authorised}}
+        <a href="/logout">Log out</a>
+        {{else}}
+        <a href="/login">Log in</a>
+        {{/if}}
+    </header>
+    {{#if msg}}
+    <aside>
+        <p class="msg">{{msg}}</p>
+    </aside>
+    {{/if}}
+
+
+    <section>
+        <!--for demo wrap-->
+        <h1 class="perforanceH1">All Cart</h1>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Cart Serial</th>
+                        <th>Cart For Performance Image</th>
+                        <th>Cart For Performance</th>
+                        <th>Show Time and Date</th>
+                        <th>Show Slot</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+
+                    {{#each allCarts}}
+                    <tr>
+                        <td>{{cart_id}}</td>
+                        <td><img src="{{host}}/images/{{thumbnail}}" alt="" border=3 height=100 width=100></td>
+                        <td>{{title}}</td>
+                        <td>{{performance_date}} {{performance_time}}</td>
+                        <td>{{slot}} </td>
+                        <td> <a href="/delete_cart/{{cart_id}}"> Delete Cart</a></td>
+                    </tr>
+                    {{/each}}
+
+
+                </tbody>
+
+            </table>
+        </div>
+        <a class="clear_cart" href="/clear_all_cart"> Clear Cart</a>
+    </section>
+</body>
+
+</html>

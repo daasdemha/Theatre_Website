@@ -1,0 +1,178 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>The Theatre | HOME</title>
+    <meta name="description" content="form to add new books">
+    <meta name="author" content="Mark Tyers">
+    <link href="{{host}}/style.css" type="text/css" rel="stylesheet" />
+    <script type="module" src="{{host}}/main.js"></script>
+
+
+
+    <script>
+        // When the user clicks on div, open the popup
+        function myFunction(value) {
+            if (value) {
+                return true;
+            } else {
+                alert('Please Login First')
+                return false;
+            }
+
+        }
+
+        function selectCost() {
+            var x = document.getElementById("costSelector").value;
+            alert(x);
+            document.getElementById("cost_selected").value = x;
+            alert(document.getElementById("cost_selected").value);
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>The Theatre</h1>
+        {{#if authorised}}
+        <a href="/logout">Log out</a>
+
+        <div id="cart" class="d-none">
+
+        </div>
+        <a href="/cart_listing" class="cart position-relative d-inline-flex" aria-label="View your shopping cart">
+            <i class="fas fa fa-shopping-cart fa-lg"></i>
+            <span class="cart-basket d-flex align-items-center justify-content-center">
+                {{cartCount}}
+            </span>
+        </a>
+
+        {{else}}
+        <a href="/login">Log in</a>
+        {{/if}}
+    </header>
+    {{#if msg}}
+    <aside>
+        <p class="msg">{{msg}}</p>
+    </aside>
+    {{/if}}
+    <section id="services" class="services section-bg">
+        <div class="container-fluid">
+            <div class="row row-sm">
+                <div class="col-md-6 _boxzoom">
+                    {{!-- <div class="zoom-thumb">
+                        <ul class="piclist">
+                            <li><img src="https://w3learnpoint.com/wp-content/uploads/2018/11/earn-money-online-cash.jpg"
+                                    alt=""></li>
+                            <li><img src="{{host}}/images/poster_1.jpeg" alt="fdsss">
+                            </li>
+                            <li><img src="https://w3learnpoint.com/wp-content/uploads/2020/04/image-27.png" alt=""></li>
+                            <li><img src="https://w3learnpoint.com/wp-content/uploads/2020/04/image-18.png" alt=""></li>
+                        </ul>
+                    </div> --}}
+                    <div class="_product-images">
+                        <div class="picZoomer">
+                            <img class="my_img" src="https://w3learnpoint.com/wp-content/uploads/2020/04/image-22.png"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+                {{#with performanceDetail}}
+                <div class="col-md-6">
+                    <div class="_product-detail-content">
+                        <p class="_p-name">{{title}}</p>
+                        <div class="_p-price-box">
+
+                            <div class="product_image_display">
+                                <img src="{{host}}/images/{{thumbnail}}" alt="" border=3 height=200 width=200>
+                            </div>
+                            <div class="_p-features">
+                                <h4> Description About this Performance:- </h4>
+                                {{description}}
+                            </div>
+                            <div class="_p-features">
+                                <h4> Casting </h4>
+                                {{cast}}
+                            </div>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <!--for demo wrap-->
+        <h1 class="perforanceH1">Performance Will Play On</h1>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Slot</th>
+                        <th>Ticket Availbe</th>
+                        <th>Cost</th>
+                        <th>Time And Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+
+                    {{#each performanceDetailBySingle}}
+                    <tr>
+                        <td>{{slot}}</td>
+                        <td>{{total_tickets}}</td>
+                        <td>
+                            <span>{{cost}}</span>
+                            <select name="costSelector" id="costSelector" onchange="selectCost()">
+                                <option value=""> Select Seat </option>
+                                <option value="5"> 5 For Front Seat</option>
+                                <option value="3"> 3 For Middle Seat</option>
+                                <option value="2"> 2 For Background Seat</option>
+                                <option value="4"> 4 For Balkony Seat</option>
+                            </select>
+                        </td>
+                        <td>
+                            {{performance_date}} {{performance_time}}
+                        </td>
+                        <td>
+                            <form action="/add_to_cart" method="post" accept-charset="utf-8">
+                                <ul class="spe_ul"></ul>
+                                <div class="_p-qty-and-cart">
+                                    <div class="_p-add-cart">
+                                        <button class="btn-theme btn btn-success popup" tabindex="0">
+                                            <a class="fa fa-shopping-cart" onclick="myFunction({{user_id}})">Add
+                                                to
+                                                Cart
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="performance_id" value="{{performance_id}}">
+                                <input type="hidden" name="performance_sub_id" value="{{id}}">
+                                <input type="hidden" id="cost_selected" name="cost_selected" value="">
+                                <input type="hidden" id="user_id" name="user_id" value="{{user_id}}">
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>
