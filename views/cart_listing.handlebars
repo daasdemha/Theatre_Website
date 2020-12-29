@@ -10,6 +10,8 @@
     <link href="{{host}}/style.css" type="text/css" rel="stylesheet" />
     <link href="{{host}}/production_plan.css" type="text/css" rel="stylesheet" />
     <script type="module" src="{{host}}/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
@@ -17,6 +19,7 @@
         <h1>The Theatre</h1>
         {{#if authorised}}
         <a href="/logout">Log out</a>
+        <a href="/">Home page</a>
         {{else}}
         <a href="/login">Log in</a>
         {{/if}}

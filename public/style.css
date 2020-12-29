@@ -11,7 +11,7 @@ a:active{
 color:white;
 }
 a:visited{
-color:silver;
+color:darkkhaki;
 }
 
 .centre-Me{
@@ -333,7 +333,9 @@ button#add:hover {
 }
 
 .clear_cart {
+    color:red;
+    font-size: 17px;
 	margin: 0 auto;
     display: block;
-    text-align: center;
+    text-align: right;
 }

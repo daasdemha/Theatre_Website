@@ -9,11 +9,12 @@
 		<meta name="author" content="Mark Tyers">
 		<link href="{{host}}/style.css" type="text/css" rel="stylesheet" />
 		<script type="module" src="{{host}}/main.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
 		<header>
 		<h1>Create an Account</h1>
-		<a href="/login">Log in</a>
+        <a href="/">Home page</a>
 		</header>
 		{{#if msg}}
  			<aside>
@@ -35,6 +36,7 @@
 				<input type="email" name="email" placeholder="a valid email address" value="{{body.email}}">
 			</p>
 			<p><input type="submit" value="Create"></p>
+            <p>Already have a account <a href="/login">Log in</a></p>
 		</form>
 		</main>
 	</body>

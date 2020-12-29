@@ -10,6 +10,7 @@
 	<link href="{{host}}/style.css" type="text/css" rel="stylesheet" />
 	<link href="{{host}}/production_plan.css" type="text/css" rel="stylesheet" />
 	<script type="module" src="{{host}}/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
  </head>
 
 <body>
@@ -17,7 +18,19 @@
 		<h1>The Theatre</h1>
 		{{#if authorised}}
 		<a href="/logout">Log out</a>
+                <div id="cart" class="d-none">
+
+        </div>
+        <a href="/cart_listing" class="cart position-relative d-inline-flex" aria-label="View your shopping cart">
+            <i class="fas fa fa-shopping-cart fa-lg"></i>
+            <span class="cart-basket d-flex align-items-center justify-content-center">
+                {{cartCount}}
+            </span>
+        Basket
+        </a>
+        
 		{{else}}
+        <a href="/register">Register</a>
 		<a href="/login">Log in</a>
 		{{/if}}
 	</header>
