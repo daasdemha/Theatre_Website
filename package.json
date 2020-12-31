@@ -17,6 +17,7 @@
 		"start": "node index.js",
 		"jsdoc": "node_modules/.bin/jsdoc -c jsdoc.conf",
 		"linter": "node_modules/.bin/eslint .",
+        "lint": "eslint",
 		"test": "ava"
 	},
 	"author": "",
@@ -36,7 +37,7 @@
 	},
 	"devDependencies": {
 		"ava": "^3.13.0",
-		"eslint": "^7.14.0",
+		"eslint": "^7.16.0",
 		"esm": "^3.2.25",
 		"jsdoc": "^3.6.5",
 		"jsdoc-route-plugin": "^0.1.0"
