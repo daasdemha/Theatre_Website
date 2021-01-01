@@ -1,0 +1,6 @@
+i learned mostly everything from https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA and https://www.traversymedia.com/
+
+i learned eslint from https://medium.com/dailyjs/adding-eslint-to-your-project-7bd4feca35a8
+ i learned handle bars from 
+ 
+ to open heroku: https://infinite-sea-93450.herokuapp.com/

@@ -7,3 +7,5 @@ To download and configure a copy of this template code for your assignment open 
 $ curl -sL https://bit.ly/2TJtxjF | sudo -E bash -
 ```
 # iftikhars-sem1
+
+# to open heroku: https://infinite-sea-93450.herokuapp.com/
